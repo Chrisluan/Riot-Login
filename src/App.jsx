@@ -1,5 +1,6 @@
 import { Box, Button, Image, Text, ButtonGroup, Checkbox } from '@chakra-ui/react';
 import { FaXbox, FaApple, FaFacebook } from "react-icons/fa";
+import CButton from './components/CButton';
 import { useState } from 'react';
 import Form from './components/Form';
 import TextInput from './components/TextInput';
@@ -18,27 +19,22 @@ function App() {
           <TextInput label={'USERNAME'}/>
           <TextInput label={'PASSWORD'}/>
         </Box>
-        <ButtonGroup sx={{
-          "&>*":{
-            width:'60px',
-            height:'27px',
-            color:'white',
-            boxShadow: "0px 0px 2px 0px rgba(0,0,0,0.75);",
-          }
-        }}>
-          <Button backgroundColor={'#1877f2'}><FaFacebook /></Button>
-          <Button backgroundColor={'white'}><Image src={GoogleLogo} width={'15px'}/></Button>
-          <Button backgroundColor={'black'}><FaApple /></Button>
-          <Button backgroundColor={'#107c10'}><FaXbox /></Button>
+        <ButtonGroup>
+          <CButton bgColor={'#1877f2'} icon={<FaFacebook />}></CButton>
+          <CButton bgColor={'white'} icon={<Image src={GoogleLogo} width={'15px'}/>}></CButton>
+          <CButton bgColor={'black'} icon={<FaApple />}></CButton>
+          <CButton bgColor={'#107c10'} icon={<FaXbox />}></CButton>
         </ButtonGroup>
-        <Box width={'100%'} >
+        <Box width={'100%'} display={'flex'} alignItems={'center'} >
               <Checkbox colorScheme='red' sx={{
+                
                 textAlign:'center',
                 fontFamily:'Montserrat',
                 fontWeight:'600',
+                
                 letterSpacing:'-5',
               }}>
-                  Stay signed In
+                  <Text fontSize='13px' height={'fit-content'}>Stay signed in</Text>
               </Checkbox> 
         </Box>
         
